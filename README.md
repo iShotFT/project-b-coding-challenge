@@ -1,5 +1,5 @@
 <div align="center">
-  <h3 align="center">Project P - Coding Challenge</h3>
+  <h3 align="center">Project B - Coding Challenge</h3>
 
   <p align="center">
     Andries Verbanck
