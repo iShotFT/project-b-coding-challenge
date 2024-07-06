@@ -26,3 +26,18 @@
   - Within NodeJS I've mainly worked with OOP & DDD design pattern within a monorepo structure
 - GraphQL implementation in NestJS
   - Traditionally I've always just straight up used Express > Apollo > GraphQL so I've had to do some digging, again, a fun experience
+  - Field validation, there are docs about doing this with the code-first approach but I choose the schema first approach
+    - Although the original challenge only mentioned simple validation, it did also mention error handling so decided to **swap the schema-first approach to code-first approach** as it seems that this implementation give a lot more freedom when it comes to argument validation
+    - I struggled a bit on the error messaging, didn't like that it was just throwing "Bad Request Exception" as response and I wanted to explicitly return the validation errors as one would expect
+
+## Improvements to be made
+
+- Better error handling: Especially if we hook into a service like Datadog, we want to spruce up our errors and bind more context to them
+
+## Resources used
+
+- https://docs.nestjs.com/
+  - https://docs.nestjs.com/graphql/quick-start
+- https://www.youtube.com/watch?v=juNVinepwKA
+- https://stackoverflow.com/a/66715831
+- https://stackoverflow.com/a/64129469
