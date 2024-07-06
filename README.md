@@ -27,6 +27,7 @@
 ### Without Docker / developer mode
 
 *⚠️ Needs a Redis server running locally*
+(using docker: `docker run --name redis -p 6379:6379 -d redis`)
 
 - `cp .env.example .env`
 - *Edit the .env file*
