@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { EmployeesResolver } from './employees.resolver';
 import { EmployeesService } from './employees.service';
-import { GraphQLUUID } from 'graphql-scalars';
+import { EmailsModule } from 'src/emails/emails.module';
 
 @Module({
-  providers: [EmployeesResolver, EmployeesService]
+  imports: [EmailsModule],
+  providers: [EmployeesResolver, EmployeesService],
 })
 export class EmployeesModule {}

@@ -1,0 +1,14 @@
+FROM node:22-alpine as build
+WORKDIR /tmp
+COPY . .
+RUN yarn install && npm run build
+
+FROM node:22-alpine
+WORKDIR /usr/src/app
+COPY --from=build /tmp/dist ./dist
+COPY --from=build /tmp/package.json ./package.json
+COPY --from=build /tmp/yarn.lock ./yarn.lock
+RUN yarn install --production --frozen-lockfile
+EXPOSE 3000
+
+CMD [ "yarn", "run", "start:prod" ]

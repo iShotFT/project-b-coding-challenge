@@ -4,13 +4,14 @@ import { faker } from '@faker-js/faker'
 import { Employee } from './models/employee.model'
 import { NewEmployeeInput } from './input/new-employee.args'
 import { UpdateEmployeeInput } from './input/update-employee.args'
+import { EmailsService } from 'src/emails/emails.service'
 
 @Injectable()
 export class EmployeesService {
   private readonly employees: Array<Employee> = []
 
-  constructor() {
-    this.employees = EmployeeFactory.createEmployees(10)
+  constructor(private readonly emailsService: EmailsService) {
+    this.employees = EmployeeFactory.createEmployees(10) // Create some dummy data
   }
 
   async create(data: NewEmployeeInput): Promise<Employee> {
@@ -19,6 +20,8 @@ export class EmployeesService {
 
     if (this.employees.find(employee => employee.id === data.id)) throw new Error('Employee already exists'); // Because we all the ID to be set manually we need to check if it already exists
     this.employees.push(employee)
+
+    await this.emailsService.sendEmail({ to: employee.email, fullName: `${employee.firstName} ${employee.lastName}`, type: 'newEmployee'})
 
     return employee;
   }
