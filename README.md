@@ -17,6 +17,7 @@
 - Yarn: 1.22.22
 - [Mailtrap](https://mailtrap.io/) account (free)
 - [Direnv](https://direnv.net/docs/installation.html)
+  - Might need extra setup step: [link](https://direnv.net/docs/hook.html)
 
 ### With Docker (recommended)
 
