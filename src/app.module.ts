@@ -7,7 +7,7 @@ import { EmployeesModule } from './employees/employees.module'
 import { ConfigModule } from '@nestjs/config'
 import { GraphQLError, GraphQLFormattedError } from 'graphql'
 import { BullModule } from '@nestjs/bullmq'
-import { GraphQLErrorExtension } from './types/errors'
+import { isGraphQLErrorExtension } from './types/errors'
 
 @Module({
   imports: [
@@ -28,14 +28,28 @@ import { GraphQLErrorExtension } from './types/errors'
         UUID: UUIDResolver,
       },
       formatError: (error: GraphQLError) => {
-        const graphQLFormattedError: GraphQLFormattedError = {
-          message: error.extensions
-            ? (
-                error.extensions as unknown as GraphQLErrorExtension
-              ).originalError?.message.join(',')
-            : error.message,
-        }
-        return graphQLFormattedError
+        let errorMessage: string;
+        if (isGraphQLErrorExtension(error.extensions)) {
+          const originalError = error.extensions.originalError;
+  
+          if (originalError) {
+              if (Array.isArray(originalError.message)) {
+                  errorMessage = originalError.message.join(',');
+              } else {
+                  errorMessage = originalError.message;
+              }
+          } else {
+              errorMessage = error.message;
+          }
+      } else {
+          errorMessage = error.message;
+      }
+  
+      const graphQLFormattedError: GraphQLFormattedError = {
+          message: errorMessage
+      };
+  
+      return graphQLFormattedError;
       }, // Pfieeeuw, this was quite a struggle, but we finally got it working, first tried to follow the solution here: https://stackoverflow.com/a/64129469 but that ended up throwing even more errors
     }), // We are using schema-first approach for the GraphQL implementation
     ConfigModule.forRoot({
