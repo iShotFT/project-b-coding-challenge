@@ -1,0 +1,73 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""employee"""
+type Employee {
+  address: String
+  city: String
+  country: String
+  createdAt: Timestamp!
+  deletedAt: Timestamp
+  dob: Timestamp
+  email: String!
+  firstName: String!
+  id: UUID!
+  lastName: String!
+  phone: String
+  postalCode: String
+  updatedAt: Timestamp!
+}
+
+type Mutation {
+  createEmployee(data: NewEmployeeInput!): Employee!
+  deleteEmployee(id: String!): Employee!
+  updateEmployee(data: UpdateEmployeeInput!): Employee!
+}
+
+input NewEmployeeInput {
+  address: String
+  city: String
+  country: String
+  createdAt: Timestamp
+  deletedAt: Timestamp
+  dob: Timestamp
+  email: String!
+  firstName: String!
+  id: UUID
+  lastName: String!
+  phone: String
+  postalCode: String
+  updatedAt: Timestamp
+}
+
+type Query {
+  employee(id: String!): Employee!
+  employees: [Employee!]!
+}
+
+"""
+The javascript `Date` as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp
+
+"""
+A field whose value is a generic Universally Unique Identifier: https://en.wikipedia.org/wiki/Universally_unique_identifier.
+"""
+scalar UUID
+
+input UpdateEmployeeInput {
+  address: String
+  city: String
+  country: String
+  createdAt: Timestamp
+  deletedAt: Timestamp
+  dob: Timestamp
+  email: String
+  firstName: String
+  id: UUID
+  lastName: String
+  phone: String
+  postalCode: String
+  updatedAt: Timestamp
+}

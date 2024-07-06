@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common'
-import { EmployeesController } from './employees.controller';
+import { Module } from '@nestjs/common';
+import { EmployeesResolver } from './employees.resolver';
 import { EmployeesService } from './employees.service';
+import { GraphQLUUID } from 'graphql-scalars';
 
 @Module({
-  controllers: [EmployeesController],
-  providers: [EmployeesService],
+  providers: [EmployeesResolver, EmployeesService]
 })
 export class EmployeesModule {}
