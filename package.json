@@ -1,10 +1,14 @@
 {
   "name": "project-p-coding-challenge",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "version": "1.0.0",
+  "description": "Coding Challenge: NestJS Backend with Employee Module and Email Service",
+  "author": "Andries Verbanck <andries@verbanck.be>",
   "private": true,
   "license": "UNLICENSED",
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
