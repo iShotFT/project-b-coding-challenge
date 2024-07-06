@@ -19,14 +19,14 @@
 
 ## Checklist & *comments*
 
-- [x] Employee Module:
-  - [x] Create Employee Endpoint:
+- Employee Module:
+  - Create Employee Endpoint:
     - [x] Add new employees with basic details like name, job title, and department.
     - [x] Read Employee Endpoint: Retrieve employee details using their ID and list all employees.
     - [x] Update Employee Endpoint: Update an employee's job title and department.
     - [x] Delete Employee Endpoint: Remove an employee from the system.
 
-- [ ] Simple Email Service:
+- Simple Email Service:
   - [ ] Integrate an email service that sends notifications (e.g., welcome email on employee creation).
   - [ ] Use a queue system (like Bull) to manage and trigger email notifications asynchronously.
 
