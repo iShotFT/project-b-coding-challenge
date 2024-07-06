@@ -15,7 +15,7 @@
 - Docker
 - NodeJS: >=20.0.0
 - Yarn: 1.22.22
-- Mailtrap account (free)
+- [Mailtrap](https://mailtrap.io/) account (free)
 - [Direnv](https://direnv.net/docs/installation.html)
 
 ### With Docker (recommended)
