@@ -22,4 +22,7 @@
 - Never worked with NestJS
   - Have worked with MVC design patterns before in Laravel though
   - Was fun to dive into their documentation and resources to learn the framework
+    - Did affect the time it took to complete this task
   - Within NodeJS I've mainly worked with OOP & DDD design pattern within a monorepo structure
+- GraphQL implementation in NestJS
+  - Traditionally I've always just straight up used Express > Apollo > GraphQL so I've had to do some digging, again, a fun experience
