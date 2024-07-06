@@ -17,6 +17,27 @@
 
 - `yarn install`
 
+## Checklist & *comments*
+
+- [x] Employee Module:
+  - [x] Create Employee Endpoint:
+    - [x] Add new employees with basic details like name, job title, and department.
+    - [x] Read Employee Endpoint: Retrieve employee details using their ID and list all employees.
+    - [x] Update Employee Endpoint: Update an employee's job title and department.
+    - [x] Delete Employee Endpoint: Remove an employee from the system.
+
+- [ ] Simple Email Service:
+  - [ ] Integrate an email service that sends notifications (e.g., welcome email on employee creation).
+  - [ ] Use a queue system (like Bull) to manage and trigger email notifications asynchronously.
+
+- Basic Setup and Configurations:
+  - [ ] Feel free to use a NestJS boilerplate for initial setup.
+  - [x] Set up basic validation for input data and error handling for the CRUD operations.
+  - [x] Implement a simple data storage solution (in-memory or a basic database setup).
+    - *Kept it to very simple in-memory implementation as there is no mention of persistent data needs*
+  - [x] We're using a GraphQL API using Apollo Server, but feel free to decide for yourself if you want to go for a REST or GraphQL based API.
+    - *❤️ GraphQL*
+
 ## Challenges Faced
 
 - Never worked with NestJS
